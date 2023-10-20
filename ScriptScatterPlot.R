@@ -1,4 +1,4 @@
-`# Load necessary libraries
+# Load necessary libraries
 library(tidyverse)  # Collection of data manipulation and visualization packages
 library(lubridate)  # Package for working with date and time objects
 library(modelr)     # Tools for modeling and visualization
@@ -63,4 +63,3 @@ ggsave(filename = "scatter_plot2.png", plot = scatter_plot2, width = 10, height 
 # top right are the food with the most protein per calorie, that are high in calorie for 100g
 # bottom left are the food with the least protein per calorie, that are low in calorie for 100g
 # top left are the food with the least protein per calorie, that are high in calorie for 100g
-`
