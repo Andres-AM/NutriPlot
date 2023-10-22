@@ -19,8 +19,6 @@ df <- read_csv2("prot.csv", show_col_types = FALSE)
 ## La question est de savoir quel produit donne le plus de prot pour une quantité fixe de calories
 # (The question is to know which product provides the most protein for a fixed amount of calories.)
 
-df %>% arrange(desc(perc_prot)) %>% kable()
-
 # Create a scatter plot using ggplot2
 scatter_plot1 <- df %>% 
   ggplot() +
@@ -51,6 +49,8 @@ ggsave(filename = "scatter_plot1.png", plot = scatter_plot1, width = 10, height 
 ggsave(filename = "scatter_plot2.png", plot = scatter_plot2, width = 10, height = 10, dpi = 600)
 
 # Save the scatter plot as a PNG file with specified dimensions and resolution (width=10, height=10, dpi=600)
+
+df %>% arrange(desc(perc_prot)) %>% kable()
 
 
 ### Interpretation : 
