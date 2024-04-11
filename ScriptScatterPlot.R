@@ -40,6 +40,17 @@ scatter_plot2 <- df %>%
   theme(legend.position = "none") +    
   labs(x = "protein[%] for 100 kcal", y = "kcal", title = "For 100g")       # Add labels to the axes and title to the plot
 
+scatter_plot1 <- df %>% 
+  ggplot() +
+  geom_point(aes(y = perc_prot, x = reorder(name, perc_prot, FUN = median) )) +
+  geom_text_repel(aes(x = name, y = perc_prot, label = name), force = 6)  + # Add text labels using geom_text_repel
+# Add points to the plot with kcal on x-axis and perc_prot on y-axis
+  scale_color_gradient(low = 'red',high = "green") +
+  scale_y_continuous(n.breaks = 10) +
+  theme(legend.position = "none") +    
+  labs(y = "protein[%] for 100 kcal", x = "name", title = "For 100g")       # Add labels to the axes and title to the plot
+
+
 
 scatter_plot1
 scatter_plot2  # Display the scatter plot
@@ -63,3 +74,23 @@ df %>% arrange(desc(perc_prot)) %>% kable()
 # top right are the food with the most protein per calorie, that are high in calorie for 100g
 # bottom left are the food with the least protein per calorie, that are low in calorie for 100g
 # top left are the food with the least protein per calorie, that are high in calorie for 100g
+
+
+# Example dataset
+food_data <- data.frame(
+  Food_Type = c("Chicken", "Beef", "Fish", "Tofu", "Eggs"),
+  Protein_Percentage = c(25, 20, 30, 15, 12)
+)
+
+# Load necessary packages
+library(ggplot2)
+
+# Order the dataset by Protein_Percentage
+food_data <- food_data[order(food_data$Protein_Percentage), ]
+
+# Create the line graph
+ggplot(data = food_data, aes(x = Food_Type, y = Protein_Percentage)) +
+  geom_point() +
+  labs(title = "Protein Percentage in Different Types of Food",
+       x = "Food Type",
+       y = "Protein Percentage")
