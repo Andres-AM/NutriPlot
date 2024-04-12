@@ -1,0 +1,76 @@
+---
+title: "NutriPlot"
+author: "Andrés Acuña Marroquín"
+date: "today"
+format: 
+  html:
+    fig-width: 8
+    fig-height: 8
+    code-fold: TRUE
+---
+
+## Overview
+
+How to read this scatter plot, @fig-NutriPlot1:   
+
+On the axis, as you move towards the right, the food becomes more calorie-dense. Similarly, moving upwards indicates increasing protein density.
+
+Consequently:  
+
+- Top left indicates foods with high protein content per calorie and low calorie count per 100g.   
+- Bottom right represents foods with low protein content per calorie but high overall calorie count per 100g.  
+- Top right denotes foods with high protein content per calorie and high calorie count per 100g.   
+- Bottom left signifies foods with low protein content per calorie and low calorie count per 100g.   
+
+
+```{r}
+#| label: fig-NutriPlot1
+#| fig-cap: "for 100g of content"
+#| warning: false
+
+source("libraries.R")
+
+df <- read_csv2("prot.csv", show_col_types = FALSE)
+
+scatter_plot1 <- df %>% 
+  ggplot() +
+  # Add points to the plot with kcal on x-axis and perc_prot on y-axis
+  geom_point(aes(x = kcal, y = perc_prot, color = perc_prot, text = name)) +    
+  # Add text labels using geom_text_repel
+  geom_text_repel(aes(x = kcal, y = perc_prot, label = name), force = 6) +  
+  scale_x_continuous(n.breaks = 10) +
+  scale_y_continuous(n.breaks = 10) +
+  scale_color_gradient(low = 'red',high = "green") +
+  theme(legend.position = "none") +    
+  labs(y = "protein[%] for 100 kcal", x = "kcal", title = "For 100g")    
+
+scatter_plot1
+
+```
+
+
+```{r}
+#| label: fig-NutriPlot2
+#| fig-cap: "Caption"
+#| warning: false
+
+scatter_plot2 <- df %>%
+  ggplot() +
+  geom_point(aes(y = perc_prot, 
+                 x = perc_prot,
+                 color = perc_prot,
+                 text= paste("Name: ", name, "\n",
+                             "protein[%]:", perc_prot))) +
+  scale_color_gradient(low = 'red',high = "green") +
+  scale_y_continuous(n.breaks = 10) +
+  scale_x_continuous(n.breaks = 10) +
+  theme(legend.position = "none") +
+  labs(y = "protein[%] for 100 kcal", x = "name", title = "For 100g")       
+
+# scatter_plot2
+
+ggplotly(scatter_plot2,tooltip = "text")
+
+
+```
+
