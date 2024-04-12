@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 *.js linguist-detectable=false
 *.html linguist-detectable=false
 *.R linguist-detectable=true
+=======
+.js
+.html
+>>>>>>> e672b9a0f5e2f62a7385b85d00d6eae8644c92bf
