@@ -40,16 +40,16 @@ scatter_plot2 <- df %>%
   theme(legend.position = "none") +    
   labs(x = "protein[%] for 100 kcal", y = "kcal", title = "For 100g")       # Add labels to the axes and title to the plot
 
-# scatter_plot1 <- df %>% 
-#   ggplot() +
-#   geom_point(aes(y = perc_prot, x = reorder(name, perc_prot, FUN = median) )) +
-#   geom_text_repel(aes(x = name, y = perc_prot, label = name), force = 6)  + # Add text labels using geom_text_repel
-# # Add points to the plot with kcal on x-axis and perc_prot on y-axis
-#   scale_color_gradient(low = 'red',high = "green") +
-#   scale_y_continuous(n.breaks = 10) +
-#   theme(legend.position = "none") +    
-#   labs(y = "protein[%] for 100 kcal", x = "name", title = "For 100g")       # Add labels to the axes and title to the plot
-# 
+scatter_plot1 <- df %>%
+  ggplot() +
+  geom_point(aes(y = perc_prot, x = reorder(name, perc_prot, FUN = median) )) +
+  geom_text_repel(aes(x = name, y = perc_prot, label = name), force = 6)  + # Add text labels using geom_text_repel
+# Add points to the plot with kcal on x-axis and perc_prot on y-axis
+  scale_color_gradient(low = 'red',high = "green") +
+  scale_y_continuous(n.breaks = 10) +
+  theme(legend.position = "none") +
+  labs(y = "protein[%] for 100 kcal", x = "name", title = "For 100g")       # Add labels to the axes and title to the plot
+
 
 
 scatter_plot1
