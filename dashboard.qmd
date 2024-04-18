@@ -9,9 +9,12 @@ format:
     code-fold: TRUE
 ---
 
-## Overview
 
-How to read this scatter plot, @fig-NutriPlot1:   
+## Why this graph ?
+
+Consuming foods that are high in protein but low in calories plays a crucial role in controlling body weight and decreasing body fat percentage. Additionally, high-protein foods have a tendency to provide a greater sense of fullness. When focusing on a diet aimed at building muscle, understanding the calorie and protein content of different foods is vital. That's why I devised this straightforward table to aid in visualizing which foods are abundant in protein yet economical in calories.
+
+## How to read this scatter plot
 
 On the axis, as you move towards the right, the food becomes more calorie-dense. Similarly, moving upwards indicates increasing protein density.
 
@@ -42,14 +45,14 @@ scatter_plot1 <- df %>%
   scale_y_continuous(n.breaks = 10) +
   scale_color_gradient(low = 'red',high = "green") +
   theme(legend.position = "none") +    
-  labs(y = "protein[%] for 100 kcal", x = "kcal", title = "For 100g")    
+  labs(y = "protein[%] for 100 kcal", x = "kcal for 100 grams of food ")    
 
 scatter_plot1
 
 ```
 
 
-```{r}
+```{r,include=FALSE}
 #| label: fig-NutriPlot2
 #| fig-cap: "Caption"
 #| warning: false
