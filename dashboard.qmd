@@ -1,6 +1,6 @@
 ---
 title: "NutriPlot"
-author: "Andrés Acuña Marroquín"
+author: "Andrés A."
 date: "today"
 format: 
   html:
