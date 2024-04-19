@@ -1,44 +1,44 @@
-name,kcal_per_100g,prot_per_100g,food_type
-Tuna,115,27,fish
-Hake,64,15,fish
-Whey,377,83,dairy
-Cod,81,17,fish
-Hake Fillet,81,17,fish
-Skyr,61,12,dairy
-Turkey,119,21.7,poultry
-Skimmed Quark,63,10,dairy
-Chicken Breast,195,29.5,poultry
-Lean Ground Beef,137,20,red meat
-Cottage Cheese,97,12,dairy
-Light Mozzarella,165,20,dairy
-Tofu,126,13,others
-Skimmed Milk,33,3.3,dairy
-Protein Bar,355,35,others
-Salmon,202,19,fish
-Light Feta,174,16,dairy
-Parmesan,392,35,dairy
-Greek Yogurt,114,10,dairy
-Eggs,147,12.5,others
-Chickpeas,128,9,legumes
-Mixed Minced Meat,256,18,red meat
-Gruyère,413,29,dairy
-Fish finger,190,13,fish
-Protein Muesli,410,28,carbs
-Green Peas,77,5.2,carbs
-Red Beans,132,8.8,legumes
-Black Beans,91,6,legumes
-Bacon Bits,270,17,red meat
-Lentils,165,8.3,legumes
-Oats,357,13.5,carbs
-Quinoa,143,5,carbs
-Pasta,371,13,carbs
-Almond Milk,15,0.5,carbs
-Chia Seeds,490,15,carbs
-Steamed Potatoes,85,1.7,carbs
-Almonds,578,21.26,nuts
-Peanuts,567,25.8,nuts
-Walnuts,654,15,nuts
-Apples ,52,0.26,Fruits
-Banana,89,2,Fruits
-Red Bell Pepper,26,1,vegetables
-Zucchini,16,1.21,vegetables
+name,kcal_per_100g,prot_per_100g,food_type,serving
+Tuna,115,27,fish,100
+Hake,64,15,fish,100
+Whey,377,83,dairy,30
+Cod,81,17,fish,100
+Hake Fillet,81,17,fish,100
+Skyr,61,12,dairy,150
+Turkey,119,21.7,poultry,100
+Skimmed Quark,63,10,dairy,100
+Chicken Breast,195,29.5,poultry,100
+Lean Ground Beef,137,20,red meat,100
+Cottage Cheese,97,12,dairy,100
+Light Mozzarella,165,20,dairy,30
+Tofu,126,13,others,100
+Skimmed Milk,33,3.3,dairy,240
+Protein Bar,355,35,others,60
+Salmon,202,19,fish,100
+Light Feta,174,16,dairy,30
+Parmesan,392,35,dairy,30
+Greek Yogurt,114,10,dairy,150
+Eggs,147,12.5,others,50
+Chickpeas,128,9,legumes,100
+Mixed Minced Meat,256,18,red meat,100
+Gruyère,413,29,dairy,30
+Fish finger,190,13,fish,100
+Muesli,410,28,carbs,45
+Green Peas,77,5.2,legumes,100
+Red Beans,132,8.8,legumes,100
+Black Beans,91,6,legumes,100
+Bacon Bits,270,17,red meat,15
+Lentils,165,8.3,legumes,100
+Oats,357,13.5,carbs,40
+Quinoa,143,5,carbs,100
+Pasta,371,13,carbs,100
+Almond Milk,15,0.5,carbs,240
+Chia Seeds,490,15,carbs,15
+Steamed Potatoes,85,1.7,carbs,100
+Almonds,578,21.26,nuts,28
+Peanuts,567,25.8,nuts,28
+Walnuts,654,15,nuts,30
+Apples ,52,0.26,Fruits,150
+Banana,89,2,Fruits,100
+Red Bell Pepper,26,1,vegetables,100
+Zucchini,16,1.21,vegetables,100
