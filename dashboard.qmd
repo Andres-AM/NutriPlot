@@ -33,24 +33,41 @@ Consequently:
 
 source("libraries.R")
 
-df <- read_csv2("prot.csv", show_col_types = FALSE)
+dr <- read_csv("prot.csv", show_col_types = FALSE )
+
+df <- dr %>% 
+  mutate(perc_prot = prot_per_100g/kcal_per_100g*100)
 
 scatter_plot1 <- df %>% 
   ggplot() +
   # Add points to the plot with kcal on x-axis and perc_prot on y-axis
-  geom_point(aes(x = kcal, y = perc_prot, color = perc_prot, text = name)) +    
+  geom_point(aes(x = kcal_per_100g, y = perc_prot, color = perc_prot, text = name)) +    
   # Add text labels using geom_text_repel
-  geom_text_repel(aes(x = kcal, y = perc_prot, label = name), force = 6) +  
-  scale_x_continuous(n.breaks = 10) +
-  scale_y_continuous(n.breaks = 10) +
+  geom_text_repel(aes(x = kcal_per_100g, y = perc_prot, label = name), force = 6) +  
+  scale_x_continuous(n.breaks = 10,limits = c(0,700)) +
+  scale_y_continuous(n.breaks = 10,limits = c(0,23)) +
   scale_color_gradient(low = 'red',high = "green") +
-  theme(legend.position = "none") +    
+  theme(legend.position = "none") +
   labs(y = "protein[%] for 100 kcal", x = "kcal for 100 grams of food ")    
 
 scatter_plot1
 
 ```
 
+```{r,include=FALSE}
+#| fig-cap: "Caption"
+#| warning: false
+
+table_recap <- df %>% 
+  select(name)
+  
+    
+table_recap
+# scatter_plot2
+
+
+
+```
 
 ```{r,include=FALSE}
 #| label: fig-NutriPlot2
