@@ -64,17 +64,33 @@ scatter_plot1
 ```
 
 ```{r,include=T}
-#| fig-cap: "Caption"
+#| fig-cap: "Table"
 #| warning: false
 
-table_recap <- df %>% 
+# table_recap <- df %>% 
+#   select(name,kcal_per_100g,prot_per_100g,perc_prot) %>% 
+#   dplyr::arrange(desc(perc_prot)) %>% 
+#   kable(col.names = c("names","Kcal for 100g","grams protein for 100g of food","Protein Density [%]"),
+#         digits = 2)
+# 
+# 
+# table_recap
+
+t <- df %>% 
+  mutate(perc_prot = round(perc_prot,2) ) %>% 
   select(name,kcal_per_100g,prot_per_100g,perc_prot) %>% 
   dplyr::arrange(desc(perc_prot)) %>% 
-  kable(col.names = c("names","Kcal for 100g","grams protein for 100g of food","Protein Density [%]"),
-        digits = 2)
+  DT::datatable(colnames = c("names","Kcal for 100g","grams protein for 100g of food","Protein Density [%]"),
+                options = list(paging = T, 
+                               pageLength = 20,
+                               dom = "t",
+                               scrollX = TRUE),
+                rownames = FALSE,
+                filter = 'top',
+                escape = F)
 
+t
 
-table_recap
 ```
 
 ```{r,include=FALSE}
