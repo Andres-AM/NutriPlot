@@ -8,6 +8,7 @@ library(splines)    # Package for spline functions and interpolation
 library(knitr)      # Package for creating dynamic reports
 library(ggrepel)    # Package for geom_text_repel() function
 library(plotly)
+library(crosstalk)
 theme_set(theme_bw())  # Set a black-and-white theme for plots
 
 options(digits=4)                 # Set the number of digits to display in numeric outputs
