@@ -18,7 +18,7 @@ Consuming foods rich in protein but low in calories plays a crucial role in mana
 
 However, there are limitations to consider when interpreting this graph:  
 
-- Firstly, the Y-axis may seem somewhat counter intuitive as it represents protein density per 100 kcal.  
+- Firstly, the Y-axis may seem somewhat counter intuitive as it represents protein density per 100 kcal of food consumed.  
 - The satiety levels associated with each food vary significantly and could significantly influence dietary choices.  
 - It's important to note that prioritizing high-protein foods doesn't imply exclusive reliance on them; a balanced diet, devoid of excess, remains the optimal recommendation for most individuals.  
 
@@ -60,6 +60,8 @@ scatter_plot1 <- df %>%
   labs(y = "Protein Density [%]", x = "kcal for 100 grams of food ")    
 
 scatter_plot1
+
+plotly::ggplotly(scatter_plot1)
 
 ```
 
