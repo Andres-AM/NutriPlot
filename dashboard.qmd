@@ -23,6 +23,8 @@ However, there are limitations to consider when interpreting this graph:
 - It's important to note that prioritizing high-protein foods doesn't imply exclusive reliance on them; a balanced diet, devoid of excess, remains the optimal recommendation for most individuals.  
 
 
+**Data source:** The data was gathered from package box information or through Google searches for unlabeled products like fruits and vegetables.
+
 ## How to read this scatter plot
 
 On the axis, as you move towards the right, the food becomes more calorie-dense. Similarly, moving upwards indicates increasing protein density.
